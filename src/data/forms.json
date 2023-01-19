@@ -1,0 +1,62 @@
+{
+    "registerForm": {
+        "formHeader": {
+            "title": "Join thousands of learners from around the world",
+            "text": "Master web development by making real-life projects. There are multiple paths for you to choose"
+        },
+        "inputs": [
+            {
+                "name": "firstName",
+                "placeholder": "First name",
+                "type": "text"
+            },
+            {
+                "name": "lastName",
+                "placeholder": "Last name",
+                "type": "text"
+            },
+            {
+                "name": "email",
+                "placeholder": "Email",
+                "type": "email"
+            },
+            {
+                "name": "phoneNumber",
+                "placeholder": "Phone number",
+                "type": "text"
+            },
+            {
+                "name": "password",
+                "placeholder": "Password",
+                "type": "password"
+            },
+            {
+                "name": "confirmPassword",
+                "placeholder": "Confirm password",
+                "type": "password"
+            }
+        ],
+        "buttonText": "Register Now",
+        "linkTo": "login"
+    },
+    "loginForm": {
+        "formHeader": {
+            "title": "Login",
+            "text": null
+        },
+        "inputs": [
+            {
+                "name": "email",
+                "placeholder": "Email",
+                "type": "email"
+            },
+            {
+                "name": "password",
+                "placeholder": "Password",
+                "type": "password"
+            }
+        ],
+        "buttonText": "Login",
+        "linkTo": "register"
+    }
+}

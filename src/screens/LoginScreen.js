@@ -1,9 +1,9 @@
 import { Layout, Form  } from '../components';
 
-const LoginScreen = () => {
+const LoginScreen = ({ loginForm }) => {
   return (
     <Layout>
-      <Form />
+      <Form data={loginForm} />
     </Layout>
   )
 }
