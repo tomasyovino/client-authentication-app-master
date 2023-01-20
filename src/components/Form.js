@@ -11,14 +11,14 @@ const Form = ({ data }) => {
         <img  src={logo} alt="logo" className="logo" />
         <span>authenticator</span>
       </div>
-      <div>
+      <div className="form-header">
         <h4>{data.formHeader.title}</h4>
         <p>{data.formHeader.text}</p>
       </div>
       <div>
         {
-          data.inputs.map((input) => (
-            <input placeholder={input.placeholder} name={input.name} type={input.type} />
+          data.inputs.map((input, index) => (
+            <input key={index} placeholder={input.placeholder} name={input.name} type={input.type} />
           ))
         }
         <button>{data.buttonText}</button>
