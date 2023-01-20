@@ -1,12 +1,14 @@
-import Header from './Header'
+import Header from './Header';
+import Footer from './Footer';
 
-const Layout = ({ children, displayHeader }) => {
+const Layout = ({ children, displayHeader, data }) => {
   return (
     <>
-        { displayHeader ? <Header /> : null }
+        { displayHeader ? <Header data={data} /> : null }
         <div className='layout'>
             {  children }
         </div>
+        <Footer />
     </>
   )
 }

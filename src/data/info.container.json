@@ -1,0 +1,46 @@
+{
+    "changeUserInfo": {
+        "info": [
+            {
+                "photo": true,
+                "textarea": false,
+                "label": null
+            },
+            {
+                "photo": false,
+                "textarea": false,
+                "label": "First Name"
+            },
+            {
+                "photo": false,
+                "textarea": false,
+                "label": "Last Name"
+            },
+            {
+                "photo": false,
+                "textarea": true,
+                "label": "Bio"
+            },
+            {
+                "photo": false,
+                "textarea": false,
+                "label": "Phone"
+            },
+            {
+                "photo": false,
+                "textarea": false,
+                "label": "Email"
+            }
+        ]
+    },
+    "changeUserPassword": {
+        "info": [
+            {
+                "photo": false,
+                "textarea": false,
+                "password": true,
+                "label": "Password"
+            }
+        ]
+    } 
+}
