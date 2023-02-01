@@ -1,9 +1,9 @@
-import { Layout, Form } from "../components"
+import { Layout, RegisterForm } from "../components"
 
-const RegisterScreen = ({ registerForm }) => {
+const RegisterScreen = () => {
   return (
     <Layout>
-      <Form data={registerForm} />
+      <RegisterForm />
     </Layout>
   )
 }

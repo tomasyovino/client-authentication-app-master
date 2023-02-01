@@ -12,6 +12,37 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loadingSpinnerContainer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 5000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loadingSpinner {
+  width: 64px;
+  height: 64px;
+  border: 8px solid;
+  border-color: #000 transparent #555 transparent;
+  border-radius: 50%;
+  animation: spin 1.2s linear infinite;
+}
+
 .author {
   display: flex;
   justify-content: space-around;
@@ -95,7 +126,7 @@ header .header-dropdown {
   transition: ease-in-out .3s;
 }
 
-header .user-header-container .arrow-dropdown {
+header .user-header-container {
   cursor: pointer;
 }
 
@@ -106,8 +137,23 @@ header .header-dropdown div {
   transition: ease-in .3s;
 }
 
-header .header-dropdown div:nth-last-child(1) {
+header .header-dropdown button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
   color: #EB5757;
+  background-color: transparent;
+  border: none;
+}
+
+header .header-dropdown button span {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.035em;
+  color: #4F4F4F;
 }
 
 header .header-dropdown div:hover {
@@ -155,6 +201,13 @@ header .header-dropdown hr {
   font-size: 14px;
   line-height: 19px;
   color: #828282;
+}
+
+.form .inputs-container p {
+  color: red;
+  text-align: left;
+  width: 100%;
+  margin-bottom: -10px;
 }
 
 .form .logo-container {
