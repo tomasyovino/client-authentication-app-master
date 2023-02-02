@@ -1,10 +1,10 @@
 import Header from './Header';
 import Footer from './Footer';
 
-const Layout = ({ children, displayHeader, data }) => {
+const Layout = ({ children, displayHeader }) => {
   return (
     <>
-        { displayHeader ? <Header data={data} /> : null }
+        { displayHeader ? <Header /> : null }
         <div className='layout'>
             {  children }
         </div>

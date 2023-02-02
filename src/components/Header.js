@@ -1,12 +1,15 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { logout, reset } from '../features/auth/authSlice';
 import { ArrowDropDown, AccountCircle, Group, Logout } from '@mui/icons-material';
+import { toast } from "react-toastify";
 import logo from "../assets/logo.png"
 
-const Header = ({ data }) => {
+const Header = () => {
   const [ dropdownIsAcitve, setDropdownIsAcitve] = useState(false);
 
+  const user = useSelector((state) => state.user.user);
+  console.log(user)
   const dispatch = useDispatch();
 
   const onLogout = () => {
@@ -21,7 +24,7 @@ const Header = ({ data }) => {
         <span>authenticator</span>
       </div>
       <div className='user-header-container' onClick={() => setDropdownIsAcitve(!dropdownIsAcitve)}>
-        <img src={data.photo} alt={data.fullName} className="userImg" />
+        <img src={user?.imgUrl} alt={user?.fullName} className="userImg" />
         <ArrowDropDown className='arrow-dropdown' />
       </div>
       <div className='header-dropdown' style={{ display: dropdownIsAcitve ? "block" : "none" }}>
@@ -29,7 +32,7 @@ const Header = ({ data }) => {
           <AccountCircle />
           <span>My Profile</span>
         </div>
-        <div>
+        <div onClick={() => toast.info("Coming soon!")}>
           <Group />
           <span>Group Chat</span>
         </div>

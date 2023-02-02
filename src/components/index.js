@@ -1,5 +1,6 @@
 export { default as PersonalInfo } from "./PersonalInfo";
-export { default as ChangePersonalInfo } from "./ChangePersonalInfo";
+export { default as UpdateUserForm } from "./UpdateUserForm";
+export { default as UpdateUserPassForm } from "./UpdateUserPassForm";
 export { default as RegisterForm } from "./RegisterForm";
 export { default as LoginForm } from "./LoginForm";
 export { default as Header } from "./Header";

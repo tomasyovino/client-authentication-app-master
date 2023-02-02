@@ -18,13 +18,13 @@ const LoginForm = () => {
 
   const dispatch = useDispatch();
 
-  const { user, isLoading, isError, isSuccess, message } = useSelector((state) => state.auth);
+  const { user, isLoading, isError, message } = useSelector((state) => state.auth);
 
   useEffect(() => {
     if(isError) toast.error(message);
 
     dispatch(reset());
-  }, [user, isError, isSuccess, message, dispatch]);
+  }, [user, isError, message, dispatch]);
 
   const handleChange = (e) => {
     setFormData({
@@ -71,7 +71,7 @@ const LoginForm = () => {
       <div className="form-header">
         <h4>Login</h4>
       </div>
-      <div>
+      <div className="inputs-container">
         <input placeholder="Username" name="username" type="text" onChange={handleChange} />
         {error.username && <p>{error.username}</p>}
         <input placeholder="Password" name="password" type="password" onChange={handleChange} />
