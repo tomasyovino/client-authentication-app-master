@@ -11,6 +11,7 @@ const UpdateUserForm = ({ user, userFormVisibility, setUserFormVisibility, userF
         email: "",
         phone: ""
     });
+    const [ selectedFile, setSelectedFile ] = useState(null);
 
     const { firstName, lastName, desc, email, phone } = formData;
 
@@ -22,23 +23,32 @@ const UpdateUserForm = ({ user, userFormVisibility, setUserFormVisibility, userF
             email: "",
             phone: ""
         });
+        setSelectedFile(null);
         userFormsVisibilityHandler(userFormVisibility, setUserFormVisibility);
+    };
+
+    const fileChangeHandler = (e) => {
+        setSelectedFile(e.target.files[0]);
+    };
+
+    const formDataAppendHandler = (state, formDataObj, name) => {
+        if(state !== "") return formDataObj.append(name, state);
+        return;
     };
 
     const submitHandler = async (e) => {
         e.preventDefault();
 
         try {
-            let fullNameSplit = user.fullName.split(" ");
-            const userData = {
-                firstName: firstName !== "" ? firstName : fullNameSplit[0],
-                lastName: lastName !== "" ? lastName : fullNameSplit[1],
-                desc: desc !== "" ? desc : user.desc,
-                email: email !== "" ? email : user.email,
-                phone: phone !== "" ? phone : user.phone
-            };
-
-            dispatchSubmitHandler(user._id, userData);
+            const formDataObject = new FormData();
+            formDataAppendHandler(firstName, formDataObject, "firstName");
+            formDataAppendHandler(lastName, formDataObject, "lastName");
+            formDataAppendHandler(desc, formDataObject, "desc");
+            formDataAppendHandler(email, formDataObject, "email");
+            formDataAppendHandler(phone, formDataObject, "phone");
+            formDataAppendHandler(selectedFile, formDataObject, "image");
+            
+            dispatchSubmitHandler(user._id, formDataObject);
             toast.success('User successfully changed');
             userFormsVisibilityHandler(userFormVisibility, setUserFormVisibility);
         } catch (err) {
@@ -51,6 +61,7 @@ const UpdateUserForm = ({ user, userFormVisibility, setUserFormVisibility, userF
                 email: "",
                 phone: ""
             });
+            setSelectedFile(null);
         };
     };
 
@@ -83,7 +94,8 @@ const UpdateUserForm = ({ user, userFormVisibility, setUserFormVisibility, userF
 
                             <div className='info info-photo'>
                                 <img src={user.imgUrl} alt={user.fullName} />
-                                <button>CHANGE PHOTO</button>
+                                {/* <button>CHANGE PHOTO</button> */}
+                                <input type="file" name="image" placeholder="CHANGE PHOTO" onChange={fileChangeHandler} />
                             </div>
                             <div className='info'>
                                 <label>First Name</label>

@@ -17,6 +17,7 @@ const RegisterForm = () => {
     password: "",
     confirmPassword: "",
   });
+  const [ selectedFile, setSelectedFile ] = useState(null);
   const [error, setError] = useState({});
 
   const { firstName, lastName, username, email, phone, password } = formData;
@@ -42,6 +43,10 @@ const RegisterForm = () => {
     });
   };
 
+  const fileChangeHandler = (e) => {
+    setSelectedFile(e.target.files[0]);
+  };
+
   const validate = (obj) => {
     const { firstName, lastName, username, email, phone, password, confirmPassword } = obj;
     let errors = {};
@@ -62,18 +67,16 @@ const RegisterForm = () => {
     if (!validate(formData)) return;
     
     try {
-      const image = e.target.file.files[0];
-      const userData = {
-        firstName,
-        lastName,
-        username,
-        email,
-        phone,
-        password,
-        image
-      };
+      const formDataObject = new FormData();
+      formDataObject.append("firstName", firstName);
+      formDataObject.append("lastName", lastName);
+      formDataObject.append("username", username);
+      formDataObject.append("email", email);
+      formDataObject.append("phone", phone);
+      formDataObject.append("password", password);
+      selectedFile && formDataObject.append("image", selectedFile);
 
-      dispatch(register(userData));
+      dispatch(register(formDataObject));
     } catch (err) {
       console.error(err);
     } finally {
@@ -86,6 +89,7 @@ const RegisterForm = () => {
         password: "",
         confirmPassword: "",
       });
+      setSelectedFile(null);
     };
   };
 
@@ -160,7 +164,8 @@ const RegisterForm = () => {
         />
         <input 
           name="file" 
-          type="file" 
+          type="file"
+          onChange={fileChangeHandler}
         />
         <button type="submit">Register Now</button>
       </div>

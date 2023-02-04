@@ -9,7 +9,6 @@ const Header = () => {
   const [ dropdownIsAcitve, setDropdownIsAcitve] = useState(false);
 
   const user = useSelector((state) => state.user.user);
-  console.log(user)
   const dispatch = useDispatch();
 
   const onLogout = () => {

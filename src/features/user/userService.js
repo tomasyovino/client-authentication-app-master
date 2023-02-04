@@ -16,6 +16,7 @@ const getUser = async (userId, token) => {
 const updateUser = async (userId, data, token) => {
     const config = {
         headers: {
+            "content-type": "multipart/form-data",
             Authorization: `Bearer ${token}`
         }
     };
