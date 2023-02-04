@@ -1,4 +1,4 @@
-import { useState, Fragment } from 'react';
+import { Fragment } from 'react';
 import { Link } from "react-router-dom";
 import { Popover, Transition } from '@headlessui/react'
 import { useDispatch, useSelector } from 'react-redux';
@@ -8,7 +8,6 @@ import { toast } from "react-toastify";
 import logo from "../assets/logo.png"
 
 const Header = () => {
-  const [ dropdownIsAcitve, setDropdownIsAcitve] = useState(false);
   const userAuth = useSelector((state) => state.auth.user)
   const user = useSelector((state) => state.user.user);
   const dispatch = useDispatch();
@@ -183,33 +182,6 @@ const Header = () => {
         </Popover.Panel>
       </Transition>
     </Popover>
-    // <header className='w-full flex justify-between items-center py-4 px-12 min-h-[10vh]'>
-    //   <div className="flex items-center gap-1">
-    //     <img  src={logo} alt="logo" className="w-9" />
-    //     <span>authenticator</span>
-    //   </div>
-    //   <div className='flex items-center gap-1 cursor-pointer' onClick={() => setDropdownIsAcitve(!dropdownIsAcitve)}>
-    //     <img src={user?.imgUrl} alt={user?.fullName} className="w-16 h-16 object-top object-cover rounded-lg" />
-    //     <ArrowDropDown className='arrow-dropdown' />
-    //   </div>
-    //   <div className='header-dropdown flex items-center gap-1' style={{ display: dropdownIsAcitve ? "block" : "none" }}>
-    //     <div className='flex items-center gap-1' >
-    //       <AccountCircle />
-    //       <span>My Profile</span>
-    //     </div>
-    //     <div className='flex items-center gap-1' onClick={() => toast.info("Coming soon!")}>
-    //       <Group />
-    //       <span>Group Chat</span>
-    //     </div>
-    //     <hr />
-    //     <div className='flex items-center gap-1' >
-    //       <button onClick={onLogout}>
-    //         <Logout />
-    //         <span>Logout</span>
-    //       </button>
-    //     </div>
-    //   </div>
-    // </header>
   )
 }
 
