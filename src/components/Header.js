@@ -26,7 +26,7 @@ const Header = () => {
       <div className="mx-auto max-w-7xl px-6 min-h-[10vh]">
         <div className="flex items-center justify-between border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
-            <Link to="/">
+            <Link to="/profile">
               <img
                 className="h-8 w-auto sm:h-10" src={logo} alt="Authenticator"
               />
@@ -75,7 +75,7 @@ const Header = () => {
                       >
                         <Popover.Panel className="absolute z-10 -ml-4 mt-3 w-screen max-w-sm transform px-2 sm:px-0 lg:left-1/2 lg:ml-0 lg:-translate-x-1/2">
                           <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 not-italic font-medium text-xs leading-4 text-gray-700 tracking-tight py-5 px-3 flex flex-col items-center gap-5 z-10">
-                            <Link to="/" className='-m-3 flex items-center gap-1 rounded-lg p-3 w-full hover:bg-[#F2F2F2]'>
+                            <Link to="/profile" className='-m-3 flex items-center gap-1 rounded-lg p-3 w-full hover:bg-[#F2F2F2]'>
                               <AccountCircle className='h-6 w-6 flex-shrink-0' aria-hidden="true" />
                               <span className='text-base font-medium text-gray-900'>My Profile</span>
                             </Link>
@@ -146,7 +146,7 @@ const Header = () => {
                 userAuth
                   ?
                   <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 not-italic font-medium text-xs leading-4 text-gray-700 tracking-tight py-5 px-3 flex flex-col items-center gap-5 z-10">
-                    <Link to="/" className='-m-3 flex items-center gap-1 rounded-lg p-3 w-full hover:bg-[#F2F2F2]'>
+                    <Link to="/profile" className='-m-3 flex items-center gap-1 rounded-lg p-3 w-full hover:bg-[#F2F2F2]'>
                       <AccountCircle className='h-6 w-6 flex-shrink-0' aria-hidden="true" />
                       <span className='text-base font-medium text-gray-900'>My Profile</span>
                     </Link>

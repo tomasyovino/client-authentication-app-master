@@ -1,3 +1,4 @@
+export { default as HomeBanner } from "./HomeBanner";
 export { default as PersonalInfo } from "./PersonalInfo";
 export { default as UpdateUserForm } from "./UpdateUserForm";
 export { default as UpdateUserPassForm } from "./UpdateUserPassForm";
@@ -7,3 +8,4 @@ export { default as Header } from "./Header";
 export { default as Footer } from "./Footer";
 export { default as Layout } from "./Layout";
 export { default as Spinner } from "./Spinner";
+export { default as NotFound } from "./NotFound";
