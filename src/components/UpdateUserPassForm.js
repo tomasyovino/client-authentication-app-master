@@ -57,12 +57,12 @@ const UpdateUserPassForm = ({ user, userFormPassVisibility, setUserFormPassVisib
             initial={{ display: "none" }}
             animate={{ scale: userFormPassVisibility ? 1 : 0, display: userFormPassVisibility ? "flex" : "none" }}
             transition={{ duration: 0.5 }}
-            className="flex flex-col items-center gap-6 not-italic tracking-tight text-black w-full max-w-3xl"
+            className="flex flex-col items-center gap-1 not-italic tracking-tight text-black w-full max-w-3xl"
             onSubmit={submitHandler}
             autoComplete="off"
         >
-            <div className='mt-5 text-start font-normal text-3xl leading-10 w-full'>
-                <button type="button" onClick={onBackRequestHandler} className="font-normal text-lg text-[#2D9CDB] bg-transparent border-none cursor-pointer">{`< Back`}</button>
+            <div className='mt-5 text-start font-normal text-3xl  leading-10 w-full'>
+                <button type="button" onClick={onBackRequestHandler} className="font-normal text-lg text-[#2D9CDB] bg-transparent border-none ml-4 cursor-pointer">{`< Back`}</button>
             </div>
 
             <div className="border rounded-xl border-[#E0E0E0] w-full">

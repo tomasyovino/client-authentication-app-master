@@ -21,27 +21,27 @@ const PersonalInfo = ({ user, motion, userFormsVisibilityHandler, userFormVisibi
                 </div>
                 <button className="py-2 px-9 text-[#828282] bg-transparent border border-[#828282] rounded-xl cursor-pointer" onClick={() => userFormsVisibilityHandler(userFormVisibility, setUserFormVisibility)}>Edit</button>
               </div>
-              <div className='flex items-center justify-start py-7 px-12 border border-[#E0E0E0]'>
+              <div className='flex items-center justify-between md:justify-start py-7 px-12 border border-[#E0E0E0]'>
                 <h5 className="w-48 font-medium text-sm text-[#BDBDBD]">PHOTO</h5>
                 <img src={user.imgUrl} alt={user.fullName} className="w-24 h-24 object-top object-cover rounded-lg" />
               </div>
-              <div className='flex items-center justify-start py-7 px-12 border border-[#E0E0E0]'>
+              <div className='flex items-center justify-between md:justify-start py-7 px-12 border border-[#E0E0E0]'>
                 <h5 className="w-48 font-medium text-sm text-[#BDBDBD]">NAME</h5>
-                <span className="font-medium text-lg leading-6 text-[#333333]">{user.fullName}</span>
+                <span className="font-medium text-lg leading-6 text-[#333333] text-end md:text-start">{user.fullName}</span>
               </div>
-              <div className='flex items-center justify-start py-7 px-12 border border-[#E0E0E0]'>
+              <div className='flex items-center justify-between md:justify-start py-7 px-12 border border-[#E0E0E0]'>
                 <h5 className="w-48 font-medium text-sm text-[#BDBDBD]">BIO</h5>
-                <span className="font-medium text-lg leading-6 text-[#333333]">{user.desc}</span>
+                <span className="font-medium text-lg leading-6 text-[#333333] text-end md:text-start">{user.desc}</span>
               </div>
-              <div className='flex items-center justify-start py-7 px-12 border border-[#E0E0E0]'>
+              <div className='flex items-center justify-between md:justify-start py-7 px-12 border border-[#E0E0E0]'>
                 <h5 className="w-48 font-medium text-sm text-[#BDBDBD]">PHONE</h5>
-                <span className="font-medium text-lg leading-6 text-[#333333]">{user.phone}</span>
+                <span className="font-medium text-lg leading-6 text-[#333333] text-end md:text-start">{user.phone}</span>
               </div>
-              <div className='flex items-center justify-start py-7 px-12 border border-[#E0E0E0]'>
+              <div className='flex items-center justify-between md:justify-start py-7 px-12 border border-[#E0E0E0]'>
                 <h5 className="w-48 font-medium text-sm text-[#BDBDBD]">EMAIL</h5>
-                <span className="font-medium text-lg leading-6 text-[#333333]">{user.email}</span>
+                <span className="font-medium text-lg leading-6 text-[#333333] text-end md:text-start">{user.email}</span>
               </div>
-              <div className='flex items-center justify-start py-7 px-12 border border-[#E0E0E0] rounded-xl'>
+              <div className='flex items-center justify-between md:justify-start py-7 px-12 border border-[#E0E0E0] rounded-xl'>
                 <h5 className="w-48 font-medium text-sm text-[#BDBDBD]">PASSWORD</h5>
                 <button onClick={() => userFormsVisibilityHandler(userFormPassVisibility, setUserFormPassVisibility)} className="py-2 px-9 text-[#828282] bg-transparent border border-[#828282] rounded-xl cursor-pointer">Change Password</button>
               </div>
