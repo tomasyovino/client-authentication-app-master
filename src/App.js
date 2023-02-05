@@ -4,6 +4,7 @@ import "react-toastify/dist/ReactToastify.css"
 import { useSelector } from "react-redux";
 import { ProfileScreen, LoginScreen, RegisterScreen } from "./screens";
 import './App.css';
+import './styles/main.css';
 
 const App = () => {
   const user = useSelector((state) => state.auth.user);

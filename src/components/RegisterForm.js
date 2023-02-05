@@ -5,7 +5,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { register, reset } from "../features/auth/authSlice";
 import Spinner from "./Spinner";
 import logo from "../assets/logo.png";
-import googleIcon from "../assets/googleIcon.png";
 
 const RegisterForm = () => {
   const [ formData, setFormData ] = useState({
@@ -96,83 +95,89 @@ const RegisterForm = () => {
   if (isLoading) return <Spinner />
 
   return (
-    <form className='form' autoComplete="off" onSubmit={handleSubmit}>
-      <div className="logo-container">
-        <img  src={logo} alt="logo" className="logo" />
+    <form className='w-full flex flex-col border rounded-3xl border-[#BDBDBD] items-center gap-7 my-10 mx-2.5 md:mx-14 py-12 px-2.5 md:px-14 max-w-[473px]' autoComplete="off" onSubmit={handleSubmit}>
+      <div className="flex flex-row items-center justify-start text-[#282051] font-semibold w-full gap-3 not-italic tracking-tight">
+        <img  src={logo} alt="logo" className="w-6" />
         <span>authenticator</span>
       </div>
-      <div className="form-header">
-        <h4>Join thousands of learners from around the world</h4>
-        <p>Master web development by making real-life projects. There are multiple paths for you to choose</p>
+      <div className="w-full flex flex-col items-center gap-3.5 not-italic tracking-tight text-[#333333] text-start">
+        <h4 className="w-full font-semibold text-lg leading-6">Join thousands of learners from around the world</h4>
+        <p className="font-normal text-base leading-5">Master web development by making real-life projects. There are multiple paths for you to choose</p>
       </div>
-      <div className="inputs-container">
-        {error.firstName && <p>{error.firstName}</p>}
+      <div className="w-full flex flex-col items-center gap-3.5 not-italic tracking-tight text-[#333333]">
+        {error.firstName && <p className="text-red-500 text-left w-full font-normal text-base leading-5">{error.firstName}</p>}
         <input 
           placeholder="First name" 
           name="firstName" 
           type="text" 
           value={formData.firstName}
-          onChange={handleChange} 
+          onChange={handleChange}
+          className="w-full p-3 border rounded-lg border-[#BDBDBD] outline-none" 
         />
-        {error.lastName && <p>{error.lastName}</p>}
+        {error.lastName && <p className="text-red-500 text-left w-full font-normal text-base leading-5">{error.lastName}</p>}
         <input 
           placeholder="Last name" 
           name="lastName" 
           type="text" 
           value={formData.lastName}
-          onChange={handleChange} 
+          onChange={handleChange}
+          className="w-full p-3 border rounded-lg border-[#BDBDBD] outline-none" 
         />
-        {error.username && <p>{error.username}</p>}
+        {error.username && <p className="text-red-500 text-left w-full font-normal text-base leading-5">{error.username}</p>}
         <input 
           placeholder="Username" 
           name="username" 
           type="text" 
           value={formData.username}
-          onChange={handleChange} 
+          onChange={handleChange}
+          className="w-full p-3 border rounded-lg border-[#BDBDBD] outline-none" 
         />
-        {error.email && <p>{error.email}</p>}
+        {error.email && <p className="text-red-500 text-left w-full font-normal text-base leading-5">{error.email}</p>}
         <input 
           placeholder="Email" 
           name="email" 
           type="text" 
           value={formData.email}
-          onChange={handleChange} 
+          onChange={handleChange}
+          className="w-full p-3 border rounded-lg border-[#BDBDBD] outline-none" 
         />
-        {error.phone && <p>{error.phone}</p>}
+        {error.phone && <p className="text-red-500 text-left w-full font-normal text-base leading-5">{error.phone}</p>}
         <input 
           placeholder="Phone number" 
           name="phone" 
           type="text" 
           value={formData.phone}
-          onChange={handleChange} 
+          onChange={handleChange}
+          className="w-full p-3 border rounded-lg border-[#BDBDBD] outline-none" 
         />
-        {error.password && <p>{error.password}</p>}
+        {error.password && <p className="text-red-500 text-left w-full font-normal text-base leading-5">{error.password}</p>}
         <input 
           placeholder="Password" 
           name="password" 
           type="password" 
           value={formData.password}
-          onChange={handleChange} 
+          onChange={handleChange}
+          className="w-full p-3 border rounded-lg border-[#BDBDBD] outline-none" 
         />
-        {error.confirmPassword && <p>{error.confirmPassword}</p>}
+        {error.confirmPassword && <p className="text-red-500 text-left w-full font-normal text-base leading-5">{error.confirmPassword}</p>}
         <input 
           placeholder="Confirm password" 
           name="confirmPassword" 
           type="password" 
           value={formData.confirmPassword}
-          onChange={handleChange} 
+          onChange={handleChange}
+          className="w-full p-3 border rounded-lg border-[#BDBDBD] outline-none" 
         />
         <input 
           name="file" 
           type="file"
           onChange={fileChangeHandler}
+          className="w-full p-3 border rounded-lg border-[#BDBDBD] outline-none" 
         />
-        <button type="submit">Register Now</button>
+        <button className="w-full py-1.5 border-none rounded-lg not-italic font-semibold leading-6 text-center tracking-tight text-white bg-[#2F80ED] cursor-pointer" type="submit">Register Now</button>
       </div>
-      <div>
-        <span>or continue with these social profile</span>
-        <img src={googleIcon} alt="google" className="google-icon" />
-        <span>Already a member? <Link to={'/login'}>Login</Link></span>
+      <div className="w-full flex flex-col items-center gap-3.5 not-italic tracking-tight text-[#828282] font-['Noto Sans'] font-medium text-sm leading-5">
+        <span>Already a member? <Link to={'/login'} className="text-[#2F80ED]">Login</Link></span>
       </div>
     </form>
   );

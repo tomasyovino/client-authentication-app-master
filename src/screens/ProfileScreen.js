@@ -40,7 +40,7 @@ const ProfileScreen = () => {
   };
 
   return (
-    <Layout displayHeader={true}>
+    <Layout>
       <PersonalInfo
         user={user}
         motion={motion} 

@@ -5,7 +5,6 @@ import { toast } from "react-toastify";
 import { login, reset } from "../features/auth/authSlice";
 import Spinner from "./Spinner";
 import logo from "../assets/logo.png";
-import googleIcon from "../assets/googleIcon.png";
 
 const LoginForm = () => {
   const [ formData, setFormData ] = useState({
@@ -63,25 +62,23 @@ const LoginForm = () => {
   if (isLoading) return <Spinner />
 
   return (
-    <form className='form' autoComplete="off" onSubmit={handleSubmit}>
-      <div className="logo-container">
-        <img  src={logo} alt="logo" className="logo" />
+    <form className='w-full flex flex-col border rounded-3xl border-[#BDBDBD] items-center gap-7 my-10 mx-2.5 md:mx-14 py-12 px-2.5 md:px-14 max-w-[473px]' autoComplete="off" onSubmit={handleSubmit}>
+      <div className="flex flex-row items-center justify-start text-[#282051] font-semibold w-full gap-3 not-italic tracking-tight">
+        <img  src={logo} alt="logo" className="w-6" />
         <span>authenticator</span>
       </div>
-      <div className="form-header">
-        <h4>Login</h4>
+      <div className="w-full flex flex-col items-center gap-3.5 not-italic tracking-tight text-[#333333] text-start">
+        <h4 className="w-full font-semibold text-lg leading-6">Login</h4>
       </div>
-      <div className="inputs-container">
-        <input placeholder="Username" name="username" type="text" onChange={handleChange} />
-        {error.username && <p>{error.username}</p>}
-        <input placeholder="Password" name="password" type="password" onChange={handleChange} />
-        {error.password && <p>{error.password}</p>}
-        <button type="submit">Login</button>
+      <div className="w-full flex flex-col items-center gap-3.5 not-italic tracking-tight text-[#333333]">
+        <input className="w-full p-3 border rounded-lg border-[#BDBDBD] outline-none" placeholder="Username" name="username" type="text" onChange={handleChange} />
+        {error.username && <p className="text-red-500 text-left w-full font-normal text-base leading-5">{error.username}</p>}
+        <input className="w-full p-3 border rounded-lg border-[#BDBDBD] outline-none" placeholder="Password" name="password" type="password" onChange={handleChange} />
+        {error.password && <p className="text-red-500 text-left w-full font-normal text-base leading-5">{error.password}</p>}
+        <button className="w-full py-1.5 border-none rounded-lg not-italic font-semibold leading-6 text-center tracking-tight text-white bg-[#2F80ED] cursor-pointer" type="submit">Login</button>
       </div>
-      <div>
-        <span>or continue with these social profile</span>
-        <img src={googleIcon} alt="google" className="google-icon" />
-        <span>Already a member? <Link to={'/register'}>Register</Link></span>
+      <div className="w-full flex flex-col items-center gap-3.5 not-italic tracking-tight text-[#828282] font-['Noto Sans'] font-medium text-sm leading-5">
+        <span>Already a member? <Link className="text-[#2F80ED]" to={'/register'}>Register</Link></span>
       </div>
     </form>
   );
